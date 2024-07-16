@@ -16,7 +16,7 @@
     background-color: white;
     padding: 20px;
     border-radius: 8px;
-    width: 85%;
+    width: 75%;
     max-width: 1080px;
     height: 75vh;
     position: relative;
@@ -24,6 +24,8 @@
   }
   
   .scrollableView {
+    display: flex;
+    flex-direction: row;
     width: 100%;
     height: 100%;
     overflow-y: scroll;
@@ -37,8 +39,8 @@
   
   .closeButton {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 8px;
+    right: 8px;
     background: none;
     border: none;
     font-size: 24px;

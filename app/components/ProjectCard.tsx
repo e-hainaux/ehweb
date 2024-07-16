@@ -28,7 +28,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, imageUrl,
 
         .project-card:hover {
           transform: translateY(-5px);
-          
+          cursor: pointer;
 
         }
         .image-container {

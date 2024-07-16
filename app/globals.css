@@ -1,33 +1,18 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
   padding: 0;
   margin: 0;
-  color: rgb(var(--foreground-rgb));
-  background-image: url('/images/ehwebSpace2.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background: linear-gradient(90deg, #130020, #4b003d, #5b1500);
+  background-size: 200% 200%;
+  /* animation: gradientAnimation 15s ease infinite alternate; */
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
+/* @keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 50% 75%; }
+} */

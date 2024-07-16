@@ -30,7 +30,7 @@ const Home: React.FC = () => {
   const content = (
     <div>
       <p>
-        Visitez mon <a className={styles.a} href="https://www.linkedin.com/in/e-hainaux" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        Retrouvez-moi sur <a className={styles.a} href="https://www.linkedin.com/in/e-hainaux" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </p>
     </div>
   );
@@ -160,13 +160,13 @@ const Home: React.FC = () => {
         open={showPopover}
         onOpenChange={handleVisibleChange}
       >
-        <div className={`${styles.spaceCatContainer} ${spin ? styles.spin : ''} ${returnToInitial ? styles.returnToInitial : ''}`}>
+        <div className={`${styles.arobaseContainer} ${spin ? styles.spin : ''} ${returnToInitial ? styles.returnToInitial : ''}`}>
           <Image 
-            src="/images/spaceCatCropped.png" 
-            alt="spaceCat" 
+            src="/images/arobase.png" 
+            alt="arobase" 
             width={80} 
             height={80} 
-            className={styles.spaceCat} 
+            className={styles.arobase} 
           />
         </div>
       </Popover>
