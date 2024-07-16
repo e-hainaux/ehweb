@@ -1,0 +1,16 @@
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    background-color: transparent;
+  }
+  
+  .text {
+    padding: 8px;
+    border-radius: 8px;
+    background-color: rgba(42, 40, 51, 0.7);
+    font-size: 1rem;
+    font-weight: 500;
+    color: #EDEEF3;
+  }

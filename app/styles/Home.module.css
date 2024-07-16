@@ -1,0 +1,43 @@
+.container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .projectsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .spaceCatContainer {
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+  }
+  .a {
+    color: #0072b1;
+  }
+  .returnToInitial {
+    animation: return 15s ease-in-out;
+  }
+  .spin {
+    animation: spin 45s linear infinite;
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  
+  @media (max-width: 768px) {
+    .spaceCatContainer {
+      width: 75px;
+      height: auto;
+    }
+  }
