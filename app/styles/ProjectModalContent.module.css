@@ -1,16 +1,9 @@
-.modalContent {
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    color: #bbbbbb;
-    
-
-  }
 
   .modalContent {
     background-color: transparent;
     padding: 20px;
     max-width: 800px;
+    height: auto;
     margin: 0 auto;
     color: #eeeeee;
     border-radius: 8px;
@@ -19,13 +12,15 @@
   .modalHeader {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: flex-end;
+    gap: 25px;
+    margin-bottom: 25px;
   }
   
   .modalTitle {
     font-size: 2rem;
-    color: #FFBA39; /* Bright gold for title */
+    color: #FFBA39;
     margin-bottom: 50px;
   }
   
@@ -40,6 +35,12 @@
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 20px;
+    padding-left: 50px;
+  }
+
+  .descriptionText {
+    text-indent: 24px;
+    text-align: justify;
   }
 
   .descriptionFrame {
@@ -93,8 +94,13 @@
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
+      gap: 0;
+      margin-bottom: 0;
+
     }
-    
+    .modalDescription {
+      padding: 0;
+    }
     .descriptionFrame {
       display: flex;
       flex-direction: column;
@@ -102,13 +108,15 @@
     }
 
     .modalImage {
+      width: 50%;
       margin-bottom: 0;
     }
   
     .modalTitle {
-      font-size: 1.2rem;
+      font-size: 1.8rem;
+      margin-bottom: 25px;
     }
-  
+    
     .links {
       width: 50%;
       flex-direction: column;

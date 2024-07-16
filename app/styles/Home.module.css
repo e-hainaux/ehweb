@@ -9,12 +9,15 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
   }
-  
-  .arobaseContainer {
+
+  .spinnerContainer {
     position: fixed;
     bottom: 16px;
     left: 16px;
+
   }
+  
+  
   .arobase {
     background-color: rgba(255, 255, 255, 0.66);
     border-radius: 50px;
@@ -24,14 +27,15 @@
     cursor: pointer;
   }
 
+    
   .a {
-    color: #0072b1;
+    color: #0038b1;
   }
   .returnToInitial {
     animation: return 15s ease-in-out;
   }
   .spin {
-    animation: spin 45s linear infinite;
+    animation: spin 20s linear infinite;
   }
   
   @keyframes spin {
@@ -45,8 +49,9 @@
 
   
   @media (max-width: 768px) {
-    .arobaseContainer {
-      width: 75px;
+    .spinnerContainer {
       height: auto;
+      bottom: 10px;
+      left: 10px;
     }
   }

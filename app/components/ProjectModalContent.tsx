@@ -25,7 +25,6 @@ interface ProjectModalContentProps {
         </div>
         <div className={styles.descriptionFrame}>
             <div className={styles.descriptionText}>
-
                 <p className={styles.modalDescription}>{fullDescription}</p>
             </div>
             <div className={styles.technologiesFrame}>
@@ -37,8 +36,12 @@ interface ProjectModalContentProps {
                 ))}
                 </ul>
                 <div className={styles.links}>
-                    <a href={githubLink} target="_blank" rel="noopener noreferrer" className={styles.link}>GitHub</a>
+                    {githubLink &&
+                      <a href={githubLink} target="_blank" rel="noopener noreferrer" className={styles.link}>GitHub</a>
+                    }
+                    {liveLink &&
                     <a href={liveLink} target="_blank" rel="noopener noreferrer" className={styles.link}>Voir en live</a>
+                    }
                 </div>
             </div>
         </div>

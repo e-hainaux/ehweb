@@ -7,10 +7,14 @@
   }
   
   .text {
+    width: 33%;
+    min-width: 150px;
+    text-align: center;
     padding: 8px;
-    border-radius: 8px;
+    border-radius: 50px;
     background-color: rgba(42, 40, 51, 0.7);
     font-size: 1rem;
     font-weight: 500;
     color: #EDEEF3;
   }
+
