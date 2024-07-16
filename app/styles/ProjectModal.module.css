@@ -13,14 +13,14 @@
   }
   
   .modalContent {
-    background-color: white;
+    background-color: rgba(26, 0, 43, 0.94);
     padding: 20px;
     border-radius: 8px;
     width: 75%;
     max-width: 1080px;
-    height: 75vh;
+    height: auto;
     position: relative;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
   }
   
   .scrollableView {
@@ -39,13 +39,13 @@
   
   .closeButton {
     position: absolute;
-    top: 8px;
-    right: 8px;
+    top: 16px;
+    right: 16px;
     background: none;
     border: none;
-    font-size: 24px;
+    font-size: 32px;
     cursor: pointer;
-    color: #333;
+    color: #bbbbbb;
     z-index: 1;
   }
   

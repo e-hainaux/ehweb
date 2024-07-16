@@ -1,0 +1,121 @@
+.modalContent {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #bbbbbb;
+    
+
+  }
+
+  .modalContent {
+    background-color: transparent;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #eeeeee;
+    border-radius: 8px;
+  }
+  
+  .modalHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-end;
+  }
+  
+  .modalTitle {
+    font-size: 2rem;
+    color: #FFBA39; /* Bright gold for title */
+    margin-bottom: 50px;
+  }
+  
+  .modalImage {
+    width: 30%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .modalDescription {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .descriptionFrame {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  
+  .technologiesList {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .technologyItem {
+    background-color: rgba(255, 186, 57, 0.2);
+    color: #FFBA39;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+  }
+  
+  .links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FFBA39; /* Bright gold for buttons */
+    color: #1E1E1E; /* Dark grey for text */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .link:hover {
+    background-color: #FFD280; /* Lighter gold on hover */
+  }
+  
+  @media (max-width: 768px) {
+    .modalContent {
+      padding: 15px;
+    }
+  
+    .modalHeader {
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    
+    .descriptionFrame {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .modalImage {
+      margin-bottom: 0;
+    }
+  
+    .modalTitle {
+      font-size: 1.2rem;
+    }
+  
+    .links {
+      width: 50%;
+      flex-direction: column;
+    }
+
+    .link {
+      text-align: center;
+    }
+  
+  }

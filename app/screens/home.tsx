@@ -10,8 +10,8 @@ import { Popover } from 'antd';
 import LoadingProgress from '../components/LoadingProgress';
 import ProjectModal from '../components/ProjectModal';
 
-
 import O20J24Q from '../components/ProjectDetails/O20J24Q';
+import ProjectModalContent from '../components/ProjectModalContent';
 // import HelenePro from '../components/ProjectDetails/HelenePro';
 // import SYA from '../components/ProjectDetails/SYA';
 // import DressCode from '../components/ProjectDetails/DressCode';
@@ -25,7 +25,7 @@ const Home: React.FC = () => {
   const [returnToInitial, setReturnToInitial] = useState(false);
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
-  const [currentProject, setCurrentProject] = useState<React.ReactNode | null>(null);
+  const [selectedProject, setSelectedProject] = useState<(typeof projects)[0] | null>(null);
 
   const content = (
     <div>
@@ -48,19 +48,9 @@ const Home: React.FC = () => {
     }
   };
 
-  const openModal = (project: React.ReactNode) => {
-    setCurrentProject(project);
-    setModalOpen(true);
-    document.body.style.overflow = 'hidden';
-  };
 
-  const closeModal = () => {
-    setModalOpen(false);
-    document.body.style.overflow = 'unset'; // Réactive le défilement
-  };
 
   useEffect(() => {
-    // Nettoyage : s'assurer que le défilement est réactivé si le composant est démonté
     return () => {
       document.body.style.overflow = 'unset';
     };
@@ -74,7 +64,7 @@ const Home: React.FC = () => {
       '/images/DressCode.png',
       '/images/GaminRetro.png',
       '/images/FibroQuoi.png',
-      '/images/spaceCatCropped.png'
+      '/images/arobase.png'
     ];
 
     const preloadImages = async () => {
@@ -111,46 +101,99 @@ const Home: React.FC = () => {
     return <LoadingProgress progress={loadingProgress} />;
   }
 
+  const projects = [
+    {
+      id: 1,
+      title: "Appli Nest & React Native",
+      description: "Nom de code O20J24Q (développement en cours)",
+      imageUrl: "/images/O20J24Q.png",
+      fullDescription: "Description complète de O20J24Q...",
+      technologies: ["Nest", "React Native", "TypeScript"],
+      githubLink: "https://github.com/your-username/O20J24Q",
+      liveLink: "https://O20J24Q-app.com",
+      component: <O20J24Q />
+    },
+    {
+      id: 2,
+      title: "Helene Pro +",
+      description: "Site Express & React (développement en cours)",
+      imageUrl: "/images/HelenePetSitting.png",
+      fullDescription: "Description complète de O20J24Q...",
+      technologies: ["Nest", "React Native", "TypeScript"],
+      githubLink: "https://github.com/your-username/O20J24Q",
+      liveLink: "https://O20J24Q-app.com",
+      component: <O20J24Q />
+    },
+    {
+      id: 3,
+      title: "SYA - Sara Yoga Arras",
+      description: "Site Express & React (développement en cours)",
+      imageUrl: "/images/SYA.png",
+      fullDescription: "Description complète de O20J24Q...",
+      technologies: ["Nest", "React Native", "TypeScript"],
+      githubLink: "https://github.com/your-username/O20J24Q",
+      liveLink: "https://O20J24Q-app.com",
+      component: <O20J24Q />
+    },
+    {
+      id: 4,
+      title: "DressCode",
+      description: "Appli Express & React Native (MVP de fin de formation)",
+      imageUrl: "/images/DressCode.png",
+      fullDescription: "Description complète de O20J24Q...",
+      technologies: ["Nest", "React Native", "TypeScript"],
+      githubLink: "https://github.com/your-username/O20J24Q",
+      liveLink: "https://O20J24Q-app.com",
+      component: <O20J24Q />
+    },
+    {
+      id: 5,
+      title: "GaminRetro",
+      description: "Site WordPress",
+      imageUrl: "/images/GaminRetro.png",
+      fullDescription: "Description complète de O20J24Q...",
+      technologies: ["Nest", "React Native", "TypeScript"],
+      githubLink: "https://github.com/your-username/O20J24Q",
+      liveLink: "https://O20J24Q-app.com",
+      component: <O20J24Q />
+    },
+    {
+      id: 6,
+      title: "FibroQuoi",
+      description: "Site HTML5 & CSS3",
+      imageUrl: "/images/FibroQuoi.png",
+      fullDescription: "Description complète de O20J24Q...",
+      technologies: ["Nest", "React Native", "TypeScript"],
+      githubLink: "https://github.com/your-username/O20J24Q",
+      liveLink: "https://O20J24Q-app.com",
+      component: <O20J24Q />
+    }
+  ];
+  
+  const openModal = (project: typeof projects[0]) => {
+    setSelectedProject(project);
+    setModalOpen(true);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    document.body.style.overflow = 'unset';
+  };
   return (
     <main className={styles.container}>
       <Header />
       <div className={styles.projectsGrid}>
-        <ProjectCard 
-          title="Appli Nest & React Native"
-          description="Nom de code O20J24Q (développement en cours)"
-          imageUrl="/images/O20J24Q.png"
-          onClick={() => openModal(<O20J24Q />)}
-        />
-        <ProjectCard 
-          title="Helene Pro +"
-          description="Site Express & React (développement en cours)"
-          imageUrl="/images/HelenePetSitting.png"
-          onClick={() => openModal(<O20J24Q />)}
-        />
-        <ProjectCard 
-          title="SYA - Sara Yoga Arras"
-          description="Site Express & React (développement en cours)"
-          imageUrl="/images/SYA.png"
-          onClick={() => openModal(<O20J24Q />)}
-        />
-        <ProjectCard 
-          title="DressCode"
-          description="Appli Express & React Native (MVP de fin de formation)"
-          imageUrl="/images/DressCode.png"
-          onClick={() => openModal(<O20J24Q />)}
-        />
-        <ProjectCard 
-          title="GaminRetro"
-          description="Site WordPress"
-          imageUrl="/images/GaminRetro.png"
-          onClick={() => openModal(<O20J24Q />)}
-        />
-        <ProjectCard 
-          title="FibroQuoi"
-          description="Site HTML5 & CSS3"
-          imageUrl="/images/FibroQuoi.png"
-          onClick={() => openModal(<O20J24Q />)}
-        />
+        {projects.map((project) => (
+          <ProjectCard 
+            key={project.id}
+            id={project.id}
+            title={project.title}
+            description={project.description}
+            imageUrl={project.imageUrl}
+            onClick={() => openModal(project)}
+          />
+        ))}
       </div>
 
       <Popover 
@@ -164,15 +207,24 @@ const Home: React.FC = () => {
           <Image 
             src="/images/arobase.png" 
             alt="arobase" 
-            width={80} 
-            height={80} 
+            width={56} 
+            height={56} 
             className={styles.arobase} 
           />
         </div>
       </Popover>
 
       <ProjectModal isOpen={modalOpen} onClose={closeModal}>
-        {currentProject}
+      {selectedProject && (
+          <ProjectModalContent
+            title={selectedProject.title}
+            fullDescription={selectedProject.fullDescription}
+            imageUrl={selectedProject.imageUrl}
+            technologies={selectedProject.technologies}
+            githubLink={selectedProject.githubLink}
+            liveLink={selectedProject.liveLink}
+          />
+        )}
       </ProjectModal>
 
       <Footer />
