@@ -199,7 +199,7 @@ const Home: React.FC = () => {
       <Popover 
         content={content} 
         trigger="click"
-        placement="topRight"
+        placement="leftBottom"
         open={showPopover}
         onOpenChange={handleVisibleChange}
       >
