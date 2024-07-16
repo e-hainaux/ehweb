@@ -4,25 +4,29 @@ import React, { useState, useEffect } from 'react';
 import styles from '../styles/Home.module.css';
 import Header from '../components/Header';
 import ProjectCard from '../components/ProjectCard';
-import ProjectModal from '../components/ProjectModal';
-import O20J24Q from '../components/ProjectDetails/O20J24Q';
 import Image from 'next/image';
 import Footer from '../components/Footer';
 import { Popover } from 'antd';
 import LoadingProgress from '../components/LoadingProgress';
+import ProjectModal from '../components/ProjectModal';
+
+
+import O20J24Q from '../components/ProjectDetails/O20J24Q';
+// import HelenePro from '../components/ProjectDetails/HelenePro';
+// import SYA from '../components/ProjectDetails/SYA';
+// import DressCode from '../components/ProjectDetails/DressCode';
+// import GaminRetro from '../components/ProjectDetails/GaminRetro';
+// import FibroQuoi from '../components/ProjectDetails/FibroQuoi';
 
 const Home: React.FC = () => {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [currentProject, setCurrentProject] = useState<React.ReactNode | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [showPopover, setShowPopover] = useState(false);
   const [spin, setSpin] = useState(true);
   const [returnToInitial, setReturnToInitial] = useState(false);
   const [loadingProgress, setLoadingProgress] = useState(0);
-  const openModal = (project: React.ReactNode) => {
-    setCurrentProject(project);
-    setModalOpen(true);
-  };
+  const [modalOpen, setModalOpen] = useState(false);
+  const [currentProject, setCurrentProject] = useState<React.ReactNode | null>(null);
+
   const content = (
     <div>
       <p>
@@ -43,6 +47,24 @@ const Home: React.FC = () => {
       }, 200);
     }
   };
+
+  const openModal = (project: React.ReactNode) => {
+    setCurrentProject(project);
+    setModalOpen(true);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    document.body.style.overflow = 'unset'; // Réactive le défilement
+  };
+
+  useEffect(() => {
+    // Nettoyage : s'assurer que le défilement est réactivé si le composant est démonté
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, []);
 
   useEffect(() => {
     const imageUrls = [
@@ -97,37 +119,37 @@ const Home: React.FC = () => {
           title="Appli Nest & React Native"
           description="Nom de code O20J24Q (développement en cours)"
           imageUrl="/images/O20J24Q.png"
-          onClick={()=> openModal(<O20J24Q />)}
+          onClick={() => openModal(<O20J24Q />)}
         />
         <ProjectCard 
           title="Helene Pro +"
           description="Site Express & React (développement en cours)"
           imageUrl="/images/HelenePetSitting.png"
-          onClick={()=> openModal(<O20J24Q />)}
+          onClick={() => openModal(<O20J24Q />)}
         />
         <ProjectCard 
           title="SYA - Sara Yoga Arras"
           description="Site Express & React (développement en cours)"
           imageUrl="/images/SYA.png"
-          onClick={()=> openModal(<O20J24Q />)}
+          onClick={() => openModal(<O20J24Q />)}
         />
         <ProjectCard 
           title="DressCode"
           description="Appli Express & React Native (MVP de fin de formation)"
           imageUrl="/images/DressCode.png"
-          onClick={()=> openModal(<O20J24Q />)}
+          onClick={() => openModal(<O20J24Q />)}
         />
         <ProjectCard 
           title="GaminRetro"
           description="Site WordPress"
           imageUrl="/images/GaminRetro.png"
-          onClick={()=> openModal(<O20J24Q />)}
+          onClick={() => openModal(<O20J24Q />)}
         />
         <ProjectCard 
           title="FibroQuoi"
           description="Site HTML5 & CSS3"
           imageUrl="/images/FibroQuoi.png"
-          onClick={()=> openModal(<O20J24Q />)}
+          onClick={() => openModal(<O20J24Q />)}
         />
       </div>
 
@@ -148,6 +170,10 @@ const Home: React.FC = () => {
           />
         </div>
       </Popover>
+
+      <ProjectModal isOpen={modalOpen} onClose={closeModal}>
+        {currentProject}
+      </ProjectModal>
 
       <Footer />
     </main>

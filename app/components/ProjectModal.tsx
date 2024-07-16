@@ -15,7 +15,10 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, children }
     <div className={styles.modalOverlay}>
       <div className={styles.modalContent}>
         <button className={styles.closeButton} onClick={onClose}>×</button>
+        <div className={styles.scrollableView}>
         {children}
+
+        </div>
       </div>
     </div>
   );
