@@ -183,19 +183,21 @@ const Home: React.FC = () => {
   return (
     <main className={styles.container}>
       <Header />
-      <div className={styles.projectsGrid}>
-        {projects.map((project) => (
-          <ProjectCard 
-            key={project.id}
-            id={project.id}
-            title={project.title}
-            description={project.description}
-            imageUrl={project.imageUrl}
-            onClick={() => openModal(project)}
-          />
-        ))}
+      <div className={styles.realisationsContainer}>
+        <span className={styles.title}>Réalisations</span>
+        <div className={styles.projectsGrid}>
+          {projects.map((project) => (
+            <ProjectCard 
+              key={project.id}
+              id={project.id}
+              title={project.title}
+              description={project.description}
+              imageUrl={project.imageUrl}
+              onClick={() => openModal(project)}
+            />
+          ))}
+        </div>
       </div>
-
       <Popover 
         content={content} 
         trigger="click"
@@ -211,7 +213,7 @@ const Home: React.FC = () => {
 
         </div>
       </Popover>
-
+      
       <ProjectModal isOpen={modalOpen} onClose={closeModal}>
       {selectedProject && (
           <ProjectModalContent
@@ -224,6 +226,7 @@ const Home: React.FC = () => {
           />
         )}
       </ProjectModal>
+      
 
       <Footer />
     </main>
