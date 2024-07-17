@@ -230,8 +230,22 @@ const Home: React.FC = () => {
   return (
     <main className={styles.container}>
       <Header />
+      <div className={styles.block}>
+      <span className={styles.title}>Stack principale</span>
+      <div className={styles.blockText}>
+          <span className={styles.stack}>Node.js | Express | Next | React.js | React Native </span>
+        </div>
+      </div>
+      <div className={styles.block}>
+        <span className={styles.title}>À propos</span>
+        <div className={styles.blockText}>
+          <p>Développeur web & mobile fullstack en reconversion, j'ai choisi ce domaine après un bilan de compétences.</p>
+          <p>Passionné par la technique et la créativité, j'ai suivi une formation à La Capsule en 2024, où j'ai acquis des compétences en JavaScript, Node.js, Express, React et React Native.</p>
+          <p>J'ai réalisé deux projets en React.js et effectué un stage chez Grow Your Business, qui a renforcé ma conviction d'être sur le bon chemin.</p>
+        </div>
+      </div>
       {isCarouselReady && (
-  <div className={styles.realisationsContainer}>
+  <div className={styles.block}>
     <span className={styles.title}>Réalisations</span>
     <div className={styles.embla} ref={emblaRef}>
       <div className={styles.emblaContainer}>
