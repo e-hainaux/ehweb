@@ -245,7 +245,7 @@ const Home: React.FC = () => {
         </div>
       </div>
       {isCarouselReady && (
-  <div className={styles.block}>
+  <div className={`${styles.block} ${styles.lastBlock}`}>
     <span className={styles.title}>Réalisations</span>
     <div className={styles.embla} ref={emblaRef}>
       <div className={styles.emblaContainer}>

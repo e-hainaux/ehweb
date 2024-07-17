@@ -57,12 +57,16 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    padding: 2px 8px 8px 8px;
+    padding: 2px 8px 24px 8px;
     margin-bottom: 24px;;
     border-radius: 8px;
     background-color: rgba(42, 40, 51, 0.7);
   }
-  
+
+  .lastBlock{
+    border-radius: 8px 8px 16px 16px;
+
+}
   .blockText {
     padding: 0 16px;
   }
