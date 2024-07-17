@@ -233,7 +233,7 @@ const Home: React.FC = () => {
       <div className={styles.block}>
       <span className={styles.title}>Stack principale</span>
       <div className={styles.blockText}>
-          <span className={styles.stack}>Node.js | Express | Next | React.js | React Native </span>
+          <span className={styles.stack}>Node.js - Express - Next - React.js - React Native </span>
         </div>
       </div>
       <div className={styles.block}>
