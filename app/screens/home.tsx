@@ -64,8 +64,7 @@ const Home: React.FC = () => {
       '/images/SYA.png',
       '/images/DressCode.png',
       '/images/GaminRetro.png',
-      '/images/FibroQuoi.png',
-      '/images/arobase.png'
+      '/images/FibroQuoi.png'
     ];
 
     const preloadImages = async () => {
@@ -206,13 +205,7 @@ const Home: React.FC = () => {
       >
         <div className={styles.spinnerContainer}>
         <div className={`${styles.arobaseContainer} ${spin ? styles.spin : ''} ${returnToInitial ? styles.returnToInitial : ''}`}>
-          {/* <Image 
-            src="/images/arobase.png" 
-            alt="arobase" 
-            width={48} 
-            height={48} 
-            className={styles.arobase} 
-          /> */}
+         
           <FaAt className={styles.arobase} />
         </div>
 
