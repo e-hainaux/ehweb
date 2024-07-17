@@ -7,6 +7,7 @@ import ProjectCard from '../components/ProjectCard';
 import Image from 'next/image';
 import Footer from '../components/Footer';
 import { Popover } from 'antd';
+import { FaAt } from 'react-icons/fa';
 import LoadingProgress from '../components/LoadingProgress';
 import ProjectModal from '../components/ProjectModal';
 
@@ -205,13 +206,14 @@ const Home: React.FC = () => {
       >
         <div className={styles.spinnerContainer}>
         <div className={`${styles.arobaseContainer} ${spin ? styles.spin : ''} ${returnToInitial ? styles.returnToInitial : ''}`}>
-          <Image 
+          {/* <Image 
             src="/images/arobase.png" 
             alt="arobase" 
             width={48} 
             height={48} 
             className={styles.arobase} 
-          />
+          /> */}
+          <FaAt className={styles.arobase} />
         </div>
 
         </div>
