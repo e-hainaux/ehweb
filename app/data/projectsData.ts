@@ -1,6 +1,6 @@
 // // src/data/projectsData.ts
 
-// import O20J24Q from '../components/ProjectDetails/O20J24Q';
+// import QJO from '../components/ProjectDetails/QJO';
 // // Importez les autres composants de détails de projet si nécessaire
 
 // export interface Project {
@@ -19,13 +19,13 @@
 //   {
 //     id: 1,
 //     title: "Appli Nest & React Native",
-//     description: "Nom de code O20J24Q (développement en cours)",
-//     imageUrl: "/images/O20J24Q.png",
-//     fullDescription: "Description complète de O20J24Q...",
+//     description: "Nom de code QJO (développement en cours)",
+//     imageUrl: "/images/QJO.png",
+//     fullDescription: "Description complète de QJO...",
 //     technologies: ["Nest", "React Native", "TypeScript"],
-//     githubLink: "https://github.com/your-username/O20J24Q",
-//     liveLink: "https://O20J24Q-app.com",
-//     component: <O20J24Q />
+//     githubLink: "https://github.com/your-username/QJO",
+//     liveLink: "https://QJO-app.com",
+//     component: <QJO />
 //   },
 //   // ... autres projets
 // ];

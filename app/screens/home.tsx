@@ -10,7 +10,7 @@ import { Popover } from 'antd';
 import LoadingProgress from '../components/LoadingProgress';
 import ProjectModal from '../components/ProjectModal';
 
-import O20J24Q from '../components/ProjectDetails/O20J24Q';
+import QJO from '../components/ProjectDetails/QJO';
 import ProjectModalContent from '../components/ProjectModalContent';
 import HelenePro from '../components/ProjectDetails/HelenePro';
 import SYA from '../components/ProjectDetails/SYA';
@@ -58,7 +58,7 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     const imageUrls = [
-      '/images/O20J24Q.png',
+      '/images/QJO.png',
       '/images/HelenePetSitting.png',
       '/images/SYA.png',
       '/images/DressCode.png',
@@ -104,14 +104,14 @@ const Home: React.FC = () => {
   const projects = [
     {
       id: 1,
-      title: "Nom de code O20J24Q",
+      title: "QJO",
       description: "Appli Nest & React Native (développement en cours)",
-      imageUrl: "/images/O20J24Q.png",
+      imageUrl: "/images/QJO.png",
       fullDescription: "Lors de mon stage à Grow Your Business, on m'a missionné sur cette application. Il s'agit d'une application de gestion de parties de jeux. J'ai d'abord travaillé au développement du backend sous Nest.js avec Prisma. Ensuite, j'ai réalisé certaines pages avec React Native et Expo. (J'utilise un nom de code parce que l'application est encore en cours de création en agence web)",
       technologies: ["Nest", "Prisma", "React Native", "Expo", "TypeScript"],
       githubLink: "",
       liveLink: "",
-      component: <O20J24Q />
+      component: <QJO />
     },
     {
       id: 2,
