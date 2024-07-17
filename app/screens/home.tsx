@@ -1,16 +1,15 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import styles from '../styles/Home.module.css';
 import Header from '../components/Header';
 import ProjectCard from '../components/ProjectCard';
-import Image from 'next/image';
 import Footer from '../components/Footer';
 import { Popover } from 'antd';
 import { FaAt } from 'react-icons/fa';
 import LoadingProgress from '../components/LoadingProgress';
 import ProjectModal from '../components/ProjectModal';
-
+import useEmblaCarousel from 'embla-carousel-react';
 import QJO from '../components/ProjectDetails/QJO';
 import ProjectModalContent from '../components/ProjectModalContent';
 import HelenePro from '../components/ProjectDetails/HelenePro';
@@ -27,6 +26,8 @@ const Home: React.FC = () => {
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<(typeof projects)[0] | null>(null);
+  const [isCarouselReady, setIsCarouselReady] = useState(false);
+  const selectCallbackRef = useRef<(() => void) | null>(null);
 
   const content = (
     <div>
@@ -88,14 +89,73 @@ const Home: React.FC = () => {
       try {
         await Promise.all(imagePromises);
         setIsLoading(false);
+        setIsCarouselReady(true)
       } catch (error) {
         console.error('Failed to load images:', error);
         setIsLoading(false);
+        setIsCarouselReady(true);
       }
     };
 
     preloadImages();
   }, []);
+
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    startIndex: 0,
+    skipSnaps: false,
+    fadeEffect: true,
+  });
+
+  
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (emblaApi && isCarouselReady) {
+      const setInitialSlideOpacity = () => {
+        const slides = emblaApi.slideNodes();
+        slides.forEach((slide, index) => {
+          if (index === emblaApi.selectedScrollSnap()) {
+            slide.style.opacity = '1';
+          } else {
+            slide.style.opacity = '0';
+          }
+        });
+      };
+
+      setInitialSlideOpacity();
+
+      const selectCallback = () => {
+        const slides = emblaApi.slideNodes();
+        slides.forEach((slide, index) => {
+          if (index === emblaApi.selectedScrollSnap()) {
+            slide.style.opacity = '1';
+            slide.style.transition = 'opacity 0.5s ease-in-out';
+          } else {
+            slide.style.opacity = '0';
+            slide.style.transition = 'opacity 0.5s ease-in-out';
+          }
+        });
+      };
+
+      selectCallbackRef.current = selectCallback;
+
+      emblaApi.on('select', selectCallback);
+
+      return () => {
+        if (selectCallbackRef.current) {
+          emblaApi.off('select', selectCallbackRef.current);
+        }
+      };
+    }
+  }, [emblaApi, isCarouselReady]);
 
   if (isLoading) {
     return <LoadingProgress progress={loadingProgress} />;
@@ -183,21 +243,35 @@ const Home: React.FC = () => {
   return (
     <main className={styles.container}>
       <Header />
-      <div className={styles.realisationsContainer}>
-        <span className={styles.title}>Réalisations</span>
-        <div className={styles.projectsGrid}>
-          {projects.map((project) => (
+      {isCarouselReady && (
+  <div className={styles.realisationsContainer}>
+    <span className={styles.title}>Réalisations</span>
+    <div className={styles.embla} ref={emblaRef}>
+      <div className={styles.emblaContainer}>
+        {projects.map((project) => (
+          <div className={styles.emblaSlide} key={project.id}>
             <ProjectCard 
-              key={project.id}
               id={project.id}
               title={project.title}
               description={project.description}
               imageUrl={project.imageUrl}
               onClick={() => openModal(project)}
             />
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
+    </div>
+        <button className={styles.emblaPrevButton} onClick={scrollPrev}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <button className={styles.emblaNextButton} onClick={scrollNext}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>)}
       <Popover 
         content={content} 
         trigger="click"

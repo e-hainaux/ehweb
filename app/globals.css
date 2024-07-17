@@ -12,6 +12,14 @@ body {
   /* animation: gradientAnimation 15s ease infinite alternate; */
 }
 
+button {
+  -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: none;
+}
 /* @keyframes gradientAnimation {
   0% { background-position: 0% 50%; }
   100% { background-position: 50% 75%; }
