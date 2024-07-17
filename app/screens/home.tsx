@@ -104,7 +104,6 @@ const Home: React.FC = () => {
     loop: true,
     startIndex: 0,
     skipSnaps: false,
-    fadeEffect: true,
   });
 
   
@@ -119,23 +118,11 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     if (emblaApi && isCarouselReady) {
-      const setInitialSlideOpacity = () => {
+      const setSlideOpacity = () => {
         const slides = emblaApi.slideNodes();
+        const currentIndex = emblaApi.selectedScrollSnap();
         slides.forEach((slide, index) => {
-          if (index === emblaApi.selectedScrollSnap()) {
-            slide.style.opacity = '1';
-          } else {
-            slide.style.opacity = '0';
-          }
-        });
-      };
-
-      setInitialSlideOpacity();
-
-      const selectCallback = () => {
-        const slides = emblaApi.slideNodes();
-        slides.forEach((slide, index) => {
-          if (index === emblaApi.selectedScrollSnap()) {
+          if (index === currentIndex) {
             slide.style.opacity = '1';
             slide.style.transition = 'opacity 0.5s ease-in-out';
           } else {
@@ -144,15 +131,15 @@ const Home: React.FC = () => {
           }
         });
       };
-
-      selectCallbackRef.current = selectCallback;
-
-      emblaApi.on('select', selectCallback);
-
+  
+      // Set initial opacity
+      setSlideOpacity();
+  
+      // Update opacity on slide change
+      emblaApi.on('select', setSlideOpacity);
+  
       return () => {
-        if (selectCallbackRef.current) {
-          emblaApi.off('select', selectCallbackRef.current);
-        }
+        emblaApi.off('select', setSlideOpacity);
       };
     }
   }, [emblaApi, isCarouselReady]);
