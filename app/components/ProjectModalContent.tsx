@@ -2,7 +2,7 @@ import styles from '../styles/ProjectModalContent.module.css';
 
 interface ProjectModalContentProps {
     title: string;
-    fullDescription: string;
+    fullDescription: string | string[];
     imageUrl: string;
     technologies: string[];
     githubLink?: string;
