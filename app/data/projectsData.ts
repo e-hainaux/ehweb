@@ -23,7 +23,7 @@ export const projects: Project[] = [
         title: "QJO",
         description: "Appli Nest & React Native (développement en cours)",
         imageUrl: "/images/QJO.png",
-        fullDescription: "Lors de mon stage à Grow Your Business, on m'a missionné sur cette application. Il s'agit d'une application de gestion de parties de jeux. J'ai d'abord travaillé au développement du backend sous Nest.js avec Prisma. Ensuite, j'ai réalisé certaines pages avec React Native et Expo. (J'utilise un nom de code parce que l'application est encore en cours de création en agence web)",
+        fullDescription: "Lors de mon stage chez Grow Your Business, on m'a missionné sur cette application. Il s'agit d'une application de gestion de parties de jeux. J'ai d'abord travaillé au développement du backend sous Nest.js avec Prisma. Ensuite, j'ai réalisé certaines pages avec React Native et Expo. (J'utilise un nom de code parce que l'application est encore en cours de création en agence web)",
         technologies: ["Nest", "Prisma", "React Native", "Expo", "TypeScript"],
         githubLink: "",
         liveLink: "",
