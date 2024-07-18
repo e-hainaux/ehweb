@@ -74,51 +74,52 @@ const RealisationsBlock: React.FC<RealisationsBlockProps> = ({ isLoading }) => {
   if (isLoading) {
     return <div className={styles.placeholder}/>;
   }
-
-  return (
-    <div className={`${styles.block} ${styles.lastBlock}`}>
-      <span className={styles.title}>Réalisations</span>
-      {isCarouselReady && (
-        <div className={styles.embla} ref={emblaRef}>
-          <div className={styles.emblaContainer}>
-            {projects.map((project) => (
-              <div className={styles.emblaSlide} key={project.id}>
-                <ProjectCard 
-                  id={project.id}
-                  title={project.title}
-                  description={project.description}
-                  imageUrl={project.imageUrl}
-                  onClick={() => openModal(project)}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-      <button className={styles.emblaPrevButton} onClick={scrollPrev}>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="15 18 9 12 15 6"></polyline>
-        </svg>
-      </button>
-      <button className={styles.emblaNextButton} onClick={scrollNext}>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="9 18 15 12 9 6"></polyline>
-        </svg>
-      </button>
-      <ProjectModal isOpen={modalOpen} onClose={closeModal}>
-        {selectedProject && (
-          <ProjectModalContent
-            title={selectedProject.title}
-            fullDescription={selectedProject.fullDescription}
-            imageUrl={selectedProject.imageUrl}
-            technologies={selectedProject.technologies}
-            githubLink={selectedProject.githubLink}
-            liveLink={selectedProject.liveLink}
-          />
+  
+    return (
+        <div className={`${styles.block} ${styles.lastBlock}`}>
+        <span className={styles.title}>Réalisations</span>
+        {isCarouselReady && (
+            <div className={styles.embla} ref={emblaRef}>
+            <div className={styles.emblaContainer}>
+                {projects.map((project) => (
+                <div className={styles.emblaSlide} key={project.id}>
+                    <ProjectCard 
+                    id={project.id}
+                    title={project.title}
+                    description={project.description}
+                    imageUrl={project.imageUrl}
+                    onClick={() => openModal(project)}
+                    />
+                </div>
+                ))}
+            </div>
+            </div>
         )}
-      </ProjectModal>
-    </div>
-  );
+        <button className={styles.emblaPrevButton} onClick={scrollPrev}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
+        <button className={styles.emblaNextButton} onClick={scrollNext}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+        <ProjectModal isOpen={modalOpen} onClose={closeModal}>
+            {selectedProject && (
+            <ProjectModalContent
+                title={selectedProject.title}
+                fullDescription={selectedProject.fullDescription}
+                imageUrl={selectedProject.imageUrl}
+                technologies={selectedProject.technologies}
+                githubLink={selectedProject.githubLink}
+                liveLink={selectedProject.liveLink}
+            />
+            )}
+        </ProjectModal>
+        </div>
+    );
 };
+
 
 export default RealisationsBlock;

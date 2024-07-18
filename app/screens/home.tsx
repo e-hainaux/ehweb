@@ -83,11 +83,15 @@ const Home: React.FC = () => {
       try {
         await Promise.all(imagePromises);
         setIsTransitioning(true);
+        setIsCarouselReady(true);
         setIsLoading(false);
+        
       } catch (error) {
         console.error('Failed to load images:', error);
         setIsTransitioning(true);
+        setIsCarouselReady(false);
         setIsLoading(false);
+        
       }
     };
 
