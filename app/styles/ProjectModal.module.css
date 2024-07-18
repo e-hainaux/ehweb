@@ -46,7 +46,9 @@
     font-size: 32px;
     cursor: pointer;
     color: #bbbbbb;
-    z-index: 1;
+    background-color: rgba(26, 0, 43, 0.85);
+    border-radius: 50px;
+    z-index: 100;
   }
   
   .closeButton:hover {
