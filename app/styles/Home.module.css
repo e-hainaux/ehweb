@@ -1,8 +1,21 @@
+
 .container {
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: fadeInBlur 1s ease-out;
+}
+
+@keyframes fadeInBlur {
+  0% {
+      filter: blur(10px);
+      opacity: 0;
   }
+  100% {
+      filter: blur(0);
+      opacity: 1;
+  }
+}
   
   .projectsGrid {
     display: grid;

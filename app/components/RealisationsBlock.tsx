@@ -1,4 +1,3 @@
-// RealisationsBlock.tsx
 import React, { useState, useCallback, useEffect } from 'react';
 import styles from '../styles/Home.module.css';
 import ProjectCard from '../components/ProjectCard';
@@ -6,14 +5,15 @@ import ProjectModal from '../components/ProjectModal';
 import ProjectModalContent from '../components/ProjectModalContent';
 import useEmblaCarousel from 'embla-carousel-react';
 import { projects, Project } from '../data/projectsData';
-import LoadingProgress from '../components/LoadingProgress';
 
-const RealisationsBlock: React.FC = () => {
+interface RealisationsBlockProps {
+  isLoading: boolean;
+}
+
+const RealisationsBlock: React.FC<RealisationsBlockProps> = ({ isLoading }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isCarouselReady, setIsCarouselReady] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-  const [loadingProgress, setLoadingProgress] = useState(0);
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
@@ -22,39 +22,10 @@ const RealisationsBlock: React.FC = () => {
   });
 
   useEffect(() => {
-    const imageUrls = projects.map(project => project.imageUrl);
-
-    const preloadImages = async () => {
-      const totalImages = imageUrls.length;
-      let loadedImages = 0;
-
-      const imagePromises = imageUrls.map(
-        (src) =>
-          new Promise<void>((resolve, reject) => {
-            const img = new Image();
-            img.src = src;
-            img.onload = () => {
-              loadedImages++;
-              setLoadingProgress((loadedImages / totalImages) * 100);
-              resolve();
-            };
-            img.onerror = reject;
-          })
-      );
-
-      try {
-        await Promise.all(imagePromises);
-        setIsLoading(false);
-        setIsCarouselReady(true);
-      } catch (error) {
-        console.error('Failed to load images:', error);
-        setIsLoading(false);
-        setIsCarouselReady(true);
-      }
-    };
-
-    preloadImages();
-  }, []);
+    if (!isLoading) {
+      setIsCarouselReady(true);
+    }
+  }, [isLoading]);
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -101,7 +72,7 @@ const RealisationsBlock: React.FC = () => {
   };
 
   if (isLoading) {
-    return <LoadingProgress progress={loadingProgress} />;
+    return <div className={styles.placeholder}/>;
   }
 
   return (

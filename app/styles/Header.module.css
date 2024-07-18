@@ -9,6 +9,16 @@
     border-radius: 16px 16px 8px 8px;
     background-color: rgba(42, 40, 51, 0.7);
   }
+  .placeholder {
+    width: 150px;
+    height: 150px;
+    font-size: 16px;
+    color: grey;
+    background-color: rgba(42, 40, 51, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   
   .imageContainer {
     display: flex;

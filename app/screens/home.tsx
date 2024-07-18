@@ -18,7 +18,7 @@ const Home: React.FC = () => {
   const [spin, setSpin] = useState(true);
   const [returnToInitial, setReturnToInitial] = useState(false);
   const [loadingProgress, setLoadingProgress] = useState(0);
-    
+  const [isTransitioning, setIsTransitioning] = useState(false);  
   const [isCarouselReady, setIsCarouselReady] = useState(false);
   
 
@@ -53,6 +53,7 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     const imageUrls = [
+      '/images/headPic2.png',
       '/images/QJO.png',
       '/images/HelenePetSitting.png',
       '/images/SYA.png',
@@ -81,12 +82,12 @@ const Home: React.FC = () => {
 
       try {
         await Promise.all(imagePromises);
+        setIsTransitioning(true);
         setIsLoading(false);
-        setIsCarouselReady(true)
       } catch (error) {
         console.error('Failed to load images:', error);
+        setIsTransitioning(true);
         setIsLoading(false);
-        setIsCarouselReady(true);
       }
     };
 
@@ -96,7 +97,7 @@ const Home: React.FC = () => {
  
 
   if (isLoading) {
-    return <LoadingProgress progress={loadingProgress} />;
+    return <LoadingProgress progress={loadingProgress} isTransitioning={isTransitioning} />;
   }
 
   return (
@@ -105,7 +106,7 @@ const Home: React.FC = () => {
       <StackBlock />
       <InfoBlock />
       
-      {isCarouselReady && (<RealisationsBlock />)}
+      {isCarouselReady && (<RealisationsBlock isLoading={isLoading}/>)}
       
       <Popover 
         content={content} 
