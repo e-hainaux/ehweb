@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import styles from '../styles/Home.module.css';
+import styles from '../styles/Block.module.css';
 import ProjectCard from '../components/ProjectCard';
 import ProjectModal from '../components/ProjectModal';
 import ProjectModalContent from '../components/ProjectModalContent';

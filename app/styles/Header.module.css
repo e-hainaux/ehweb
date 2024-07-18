@@ -8,6 +8,8 @@
     margin-bottom: 24px;
     border-radius: 16px 16px 8px 8px;
     background-color: rgba(42, 40, 51, 0.7);
+    box-shadow: 0 4px 8px rgba(15, 15, 15, 0.6);
+
   }
   .placeholder {
     width: 150px;
