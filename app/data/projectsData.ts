@@ -78,7 +78,7 @@ export const projects: Project[] = [
         title: "FibroQuoi",
         description: "Site HTML5 & CSS3",
         imageUrl: "/images/FibroQuoi.png",
-        fullDescription: "Tout premier site que j'ai développé avant de lancer ma reconversion. IL s'agit de présenter de façon synthétique le syndrôme fibromyalgique. Site initialement développé avec les moyens du bord : HTML et CSS tapés directement dans un bloc-notes windows. J'ai depuis eu la joie d'apprendre à utiliser Visual Studio Code. Fibro-Quoi est en projet de réalisation future sous Vue.js et Tailwind afin de me familiariser avec ces Technos.",
+        fullDescription: "Tout premier site que j'ai développé avant de lancer ma reconversion. Il s'agit de présenter de façon synthétique le syndrôme fibromyalgique. Site initialement développé avec les moyens du bord : HTML et CSS tapés directement dans un bloc-notes windows. J'ai depuis eu la joie d'apprendre à utiliser Visual Studio Code. Fibro-Quoi est en projet de réalisation future sous Vue.js et Tailwind afin de me familiariser avec ces Technos.",
         technologies: ["HTML5", "CSS", "Bloc-notes Windows"],
         githubLink: "",
         liveLink: "https://fibro-quoi.fr/",
