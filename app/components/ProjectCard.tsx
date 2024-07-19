@@ -20,6 +20,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ id, title, description, image
 
       <style jsx>{`
         .project-card {
+          min-height: 350px;
           border: none;
           border-radius: 24px;
           overflow: hidden;
@@ -36,12 +37,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ id, title, description, image
           position: relative;
           width: 100%;
           height: 30vh;
+          min-height: 230px;
           overflow: hidden;
         }
 
         .project-image {
-          width: 100%;
+          width: auto;
           height: 100%;
+          min-height: 300px;
           object-fit: cover;
         }
 
