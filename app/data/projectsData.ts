@@ -24,10 +24,10 @@ export const projects: Project[] = [
       title: "Portfolio",
       description: "Site Next (TS) & React",
       imageUrl: "/images/portfolio.png",
-      fullDescription: "Après plusieurs projets, il était important de développer mon portfolio. Je l'ai développé en TypeScript pour garder la main suite à mon stage. Il s'agit d'un premier jet, il évoluera par la suite.",
+      fullDescription: "Après plusieurs projets, il était important pour moi de développer mon portfolio. Je l'ai réalisé en TypeScript pour garder la main suite à mon stage, profitant ainsi d'un code plus fiable et plus facile à maintenir.",
       technologies: ["Next", "React", "TypeScript"],
       githubLink: "",
-      liveLink: "https://ehweb.fr/",
+      liveLink: "",
       component: Portfolio
     },
     {
