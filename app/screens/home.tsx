@@ -53,7 +53,8 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     const imageUrls = [
-      '/images/headPic2.png',
+      '/images/portfolio.png',
+      '/images/headPic.png',
       '/images/QJO.png',
       '/images/HelenePetSitting.png',
       '/images/SYA.png',

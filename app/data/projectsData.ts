@@ -1,3 +1,4 @@
+import Portfolio from '../components/ProjectDetails/Portfolio';
 import QJO from '../components/ProjectDetails/QJO';
 import HelenePro from '../components/ProjectDetails/HelenePro';
 import SYA from '../components/ProjectDetails/SYA';
@@ -19,7 +20,18 @@ export interface Project {
 
 export const projects: Project[] = [
     {
-        id: 1,
+      id: 1,
+      title: "Portfolio",
+      description: "Site Next (TS) & React",
+      imageUrl: "/images/portfolio.png",
+      fullDescription: "Après plusieurs projets, il était important de développer mon portfolio. Je l'ai développé en TypeScript pour garder la main suite à mon stage. Il s'agit d'un premier jet, il évoluera par la suite.",
+      technologies: ["Next", "React", "TypeScript"],
+      githubLink: "",
+      liveLink: "https://ehweb.fr/",
+      component: Portfolio
+    },
+    {
+        id: 2,
         title: "QJO",
         description: "Appli Nest & React Native (développement en cours)",
         imageUrl: "/images/QJO.png",
@@ -30,7 +42,7 @@ export const projects: Project[] = [
         component: QJO
       },
       {
-        id: 2,
+        id: 3,
         title: "Helene Pro +",
         description: "Site Express & React (développement en cours)",
         imageUrl: "/images/HelenePetSitting.png",
@@ -41,7 +53,7 @@ export const projects: Project[] = [
         component: HelenePro
       },
       {
-        id: 3,
+        id: 4,
         title: "SYA - Sara Yoga Arras",
         description: "Site Express & React (développement en cours)",
         imageUrl: "/images/SYA.png",
@@ -52,7 +64,7 @@ export const projects: Project[] = [
         component: SYA
       },
       {
-        id: 4,
+        id: 5,
         title: "DressCode",
         description: "Appli Express & React Native (MVP de fin de formation)",
         imageUrl: "/images/DressCode.png",
@@ -63,7 +75,7 @@ export const projects: Project[] = [
         component: DressCode
       },
       {
-        id: 5,
+        id: 6,
         title: "GaminRetro",
         description: "Site WordPress",
         imageUrl: "/images/GaminRetro.png",
@@ -74,7 +86,7 @@ export const projects: Project[] = [
         component: GaminRetro
       },
       {
-        id: 6,
+        id: 7,
         title: "FibroQuoi",
         description: "Site HTML5 & CSS3",
         imageUrl: "/images/FibroQuoi.png",
