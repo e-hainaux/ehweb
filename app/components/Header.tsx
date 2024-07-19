@@ -8,7 +8,7 @@ const Header: React.FC = () => {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const img = new window.Image();
-      img.src = '/images/headPic2.png';
+      img.src = '/images/headPic.png';
       img.onload = () => {
         setImageLoaded(true);
       };
@@ -20,7 +20,7 @@ const Header: React.FC = () => {
       <div className={styles.imageContainer}>
         {!imageLoaded && <div className={styles.placeholder}>Chargement image...</div>}
         <Image 
-          src="/images/headPic2.png" 
+          src="/images/headPic.png" 
           alt="Profile photo" 
           layout="responsive"  
           width={150} 
