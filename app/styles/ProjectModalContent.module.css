@@ -74,6 +74,7 @@
   .link {
     display: inline-block;
     padding: 10px 20px;
+    margin-bottom: 16px;
     background-color: #FFBA39; /* Bright gold for buttons */
     color: #1E1E1E; /* Dark grey for text */
     text-decoration: none;
@@ -86,9 +87,7 @@
   }
   
   @media (max-width: 768px) {
-    .modalContent {
-      padding: 15px;
-    }
+    
   
     .modalHeader {
       flex-direction: column;
