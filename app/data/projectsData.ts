@@ -29,7 +29,7 @@ export const projects: Project[] = [
       "Ce projet est une reprise de la version initialement réalisée sous WordPress. J'ai réalisé cette version 'app' en fullstack avec un backend sous Express et un front en React afin de consolider mes connaissances acquises lors de ma formation à La Capsule. Le vrai plus par rapport à la version WP est la partie Admin que j'ai totalement configurée pour me permettre de récupérer les informations des jeux vidéos via l'API 'IGDB'. Cela me permet d'ajouter les jeux de façon automatisée via une simple recherche et une validation. La base de données MongoDB me permet de conserver l'ensemble des informations m'étant utiles et je peux également modifier ou supprimer les jeux via un onglet de la partie 'admin'. Cloudinary me sert à sauvegarder les illustrations des jeux.",
     technologies: ["Express", "React", "JavaScript"],
     githubLink: "",
-    liveLink: "",
+    liveLink: "https://app.gaminretro.fr",
     component: GaminRetroApp,
   },
   {
