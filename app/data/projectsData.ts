@@ -1,6 +1,6 @@
 import GaminRetroApp from "../components/ProjectDetails/GaminRetroApp";
 import Portfolio from "../components/ProjectDetails/Portfolio";
-import QJO from "../components/ProjectDetails/QJO";
+import OJQ from "../components/ProjectDetails/OJQ";
 import HelenePro from "../components/ProjectDetails/HelenePro";
 import SYA from "../components/ProjectDetails/SYA";
 import DressCode from "../components/ProjectDetails/DressCode";
@@ -46,17 +46,17 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    title: "QJO",
+    title: "On Joue Quand",
     description: "Appli Nest & React Native (développement en cours)",
-    imageUrl: "/images/QJO.png",
+    imageUrl: "/images/OJQ.png",
     fullDescription: [
-      "Lors de mon stage chez Grow Your Business, on m'a missionné sur cette application. Il s'agit d'une application de gestion de parties de jeux. J'ai d'abord travaillé au développement du backend sous Nest.js avec Prisma. Ensuite, j'ai réalisé certaines pages avec React Native et Expo. (J'utilise un nom de code parce que l'application est encore en cours de création en agence web). ",
+      "Lors de mon stage chez Grow Your Business, on m'a missionné sur cette application. Il s'agit d'une application de gestion de parties de jeux. J'ai d'abord travaillé au développement du backend sous Nest.js avec Prisma. Ensuite, j'ai réalisé certaines pages avec React Native et Expo. ",
       "Cette expérience m'a permis de vivre en situation réelle le métier de développeur web dans un contexte agile et une organisation en sprints de développement.",
     ],
     technologies: ["Nest", "Prisma", "React Native", "Expo", "TypeScript"],
     githubLink: "",
-    liveLink: "",
-    component: QJO,
+    liveLink: "https://fr.ulule.com/on-joue-quand/",
+    component: OJQ,
   },
   {
     id: 4,
