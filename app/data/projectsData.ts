@@ -1,3 +1,4 @@
+import FuriganaApp from "../components/ProjectDetails/FuriganaApp";
 import GaminRetroApp from "../components/ProjectDetails/GaminRetroApp";
 import Portfolio from "../components/ProjectDetails/Portfolio";
 import OJQ from "../components/ProjectDetails/OJQ";
@@ -22,6 +23,18 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
+    title: "Furigana App",
+    description: "App Nest.js & Vue3 (+ Tailwind)",
+    imageUrl: "/images/LogoFuriganaApp.png",
+    fullDescription:
+      "Dans le but d'étendre mes compétences en apprenant à développer sous Vue3 avec Tailwind CSS, j'ai développé cet outil applicatif qui permet de retranscrire un texte japonais dans une version comprenant la prononciation des idéogrammes (kanji). Pour cette partie technique, j'ai fait appel à l'API 'kuroshiro' qui est spécialement conçue pour ce type de besoin. J'ai pu joindre l'utile à l'agréable, étant moi-même amateur de la langue japonaise.",
+    technologies: ["Nest.js", "Vue3", "Typescript", "Tailwind CSS"],
+    githubLink: "",
+    liveLink: "https://furigana-app.vercel.app/",
+    component: FuriganaApp,
+  },
+  {
+    id: 2,
     title: "Gamin Retro APP",
     description: "App Express & React",
     imageUrl: "/images/GaminRetroLogo.png",
@@ -33,7 +46,7 @@ export const projects: Project[] = [
     component: GaminRetroApp,
   },
   {
-    id: 2,
+    id: 3,
     title: "Portfolio",
     description: "Site Next (TS) & React",
     imageUrl: "/images/portfolio.png",
@@ -45,7 +58,7 @@ export const projects: Project[] = [
     component: Portfolio,
   },
   {
-    id: 3,
+    id: 4,
     title: "On Joue Quand",
     description: "Appli Nest & React Native (développement en cours)",
     imageUrl: "/images/OJQ.png",
@@ -59,7 +72,7 @@ export const projects: Project[] = [
     component: OJQ,
   },
   {
-    id: 4,
+    id: 5,
     title: "Helene Pro +",
     description: "Site Express & React (développement en cours)",
     imageUrl: "/images/HelenePetSitting.png",
@@ -71,7 +84,7 @@ export const projects: Project[] = [
     component: HelenePro,
   },
   {
-    id: 5,
+    id: 6,
     title: "SYA - Sara Yoga Arras",
     description: "Site Express & React (développement en cours)",
     imageUrl: "/images/SYA.png",
@@ -83,7 +96,7 @@ export const projects: Project[] = [
     component: SYA,
   },
   {
-    id: 6,
+    id: 7,
     title: "DressCode",
     description: "Appli Express & React Native (MVP de fin de formation)",
     imageUrl: "/images/DressCode.png",
@@ -96,7 +109,7 @@ export const projects: Project[] = [
     component: DressCode,
   },
   {
-    id: 7,
+    id: 8,
     title: "GaminRetro",
     description: "Site WordPress",
     imageUrl: "/images/GaminRetro.png",
