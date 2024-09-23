@@ -80,6 +80,7 @@
 .mainText {
   text-indent: 24px;
   text-align: justify;
+  padding: 0 40px;
   color: whitesmoke;
 }
 
@@ -177,5 +178,9 @@
 
   .technosText {
     font-size: 12px;
+  }
+
+  .mainText {
+    padding: 0 16px;
   }
 }
