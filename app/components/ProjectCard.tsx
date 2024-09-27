@@ -23,7 +23,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           src={imageUrl}
           alt={title}
           fill
-          sizes="100%"
+          style={{ objectFit: "cover" }}
           className="project-image"
         />
       </div>

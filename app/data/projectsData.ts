@@ -49,7 +49,7 @@ export const projects: Project[] = [
     id: 3,
     title: "Portfolio",
     description: "Site Next (TS) & React",
-    imageUrl: "/images/portfolio.png",
+    imageUrl: "/images/ehwebLogo.svg",
     fullDescription:
       "Après plusieurs projets, il était important pour moi de développer mon portfolio. Je l'ai réalisé en TypeScript pour garder la main suite à mon stage, profitant ainsi d'un code plus fiable et plus facile à maintenir.",
     technologies: ["Next", "React", "TypeScript"],
