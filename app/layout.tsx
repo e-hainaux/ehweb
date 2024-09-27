@@ -15,7 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr">
+      <link rel="icon" href="/ehwebLogo.svg" />
       <body className={inter.className}>{children}</body>
     </html>
   );

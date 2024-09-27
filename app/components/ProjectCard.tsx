@@ -1,5 +1,5 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 
 interface ProjectCardProps {
   id: number;
@@ -9,11 +9,23 @@ interface ProjectCardProps {
   onClick: (id: number) => void;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ id, title, description, imageUrl, onClick }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({
+  id,
+  title,
+  description,
+  imageUrl,
+  onClick,
+}) => {
   return (
     <div className="project-card" onClick={() => onClick(id)}>
       <div className="image-container">
-        <Image src={imageUrl} alt={title} layout="fill" objectFit="cover" className="project-image" />
+        <Image
+          src={imageUrl}
+          alt={title}
+          fill
+          sizes="100%"
+          className="project-image"
+        />
       </div>
       <h2 className="project-title">{title}</h2>
       <p className="project-description">{description}</p>
@@ -51,14 +63,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ id, title, description, image
         .project-title {
           font-size: 1.25rem;
           font-weight: bold;
-          color: #FFBA39;
+          color: #ffba39;
           margin: 1rem 0 0.5rem;
           padding: 0 1rem;
         }
 
         .project-description {
           font-size: 1rem;
-          color: #EDEEF3;
+          color: #edeef3;
           padding: 0 1rem 1rem;
         }
       `}</style>

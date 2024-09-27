@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
-import styles from '../styles/Header.module.css';
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import styles from "../styles/Header.module.css";
 
 const Header: React.FC = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       const img = new window.Image();
-      img.src = '/images/headPic.png';
+      img.src = "/images/headPic.png";
       img.onload = () => {
         setImageLoaded(true);
       };
@@ -18,15 +18,20 @@ const Header: React.FC = () => {
   return (
     <header className={styles.header}>
       <div className={styles.imageContainer}>
-        {!imageLoaded && <div className={styles.placeholder}>Chargement image...</div>}
-        <Image 
-          src="/images/headPic.png" 
-          alt="Profile photo" 
-          layout="responsive"  
-          width={150} 
-          height={150} 
-          className={`${styles.photo} ${imageLoaded ? styles.loaded : styles.hidden}`}
+        {!imageLoaded && (
+          <div className={styles.placeholder}>Chargement image...</div>
+        )}
+        <Image
+          src="/images/headPic.png"
+          alt="Profile photo"
+          priority={true}
+          width={150}
+          height={150}
+          className={`${styles.photo} ${
+            imageLoaded ? styles.loaded : styles.hidden
+          }`}
           onLoad={() => setImageLoaded(true)}
+          style={{ objectFit: "cover", objectPosition: "center" }}
         />
       </div>
       <div className={styles.titleContainer}>

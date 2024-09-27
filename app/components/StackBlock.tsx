@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "../styles/Block.module.css";
-import Image from "next/image";
+// import Image from "next/image";
 
 const StackBlock: React.FC = () => {
   return (
     <div className={styles.block}>
       <span className={styles.title}>Stack principale</span>
-      <div className={styles.blockImages}>
+      {/* <div className={styles.blockImages}>
         <div className={styles.imageContainer}>
           <Image
             src="/images/technos/NodeJS.png"
@@ -53,7 +53,7 @@ const StackBlock: React.FC = () => {
             className={styles.technoLogo}
           />
         </div>
-      </div>
+      </div> */}
       <div className={styles.blockText}>
         <div className={styles.technosTextContainer}>
           <p className={styles.technosText}>{`Node.js`}</p>

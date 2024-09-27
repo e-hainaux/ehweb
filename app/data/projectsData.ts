@@ -121,7 +121,7 @@ export const projects: Project[] = [
     component: GaminRetro,
   },
   {
-    id: 8,
+    id: 9,
     title: "FibroQuoi",
     description: "Site HTML5 & CSS3",
     imageUrl: "/images/FibroQuoi.png",

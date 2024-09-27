@@ -1,4 +1,5 @@
 const imageUrls = [
+  "/images/LogoFuriganaApp.png",
   "/images/portfolio.png",
   "/images/headPic.png",
   "/images/QJO.png",
