@@ -4,7 +4,7 @@ import React, { useState, useEffect, useCallback, useRef } from "react";
 import styles from "../styles/Home.module.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { Popover } from "antd";
+import ContactPopover from "../components/ContactPopover";
 import { FaAt } from "react-icons/fa";
 import LoadingProgress from "../components/LoadingProgress";
 
@@ -119,23 +119,7 @@ const Home: React.FC = () => {
 
       {isCarouselReady && <RealisationsBlock isLoading={isLoading} />}
 
-      <Popover
-        content={content}
-        trigger="click"
-        placement="leftBottom"
-        open={showPopover}
-        onOpenChange={handleVisibleChange}
-      >
-        <div className={styles.spinnerContainer}>
-          <div
-            className={`${styles.arobaseContainer} ${spin ? styles.spin : ""} ${
-              returnToInitial ? styles.returnToInitial : ""
-            }`}
-          >
-            <FaAt className={styles.arobase} />
-          </div>
-        </div>
-      </Popover>
+      <ContactPopover />
 
       <Footer />
     </main>

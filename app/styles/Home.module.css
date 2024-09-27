@@ -1,4 +1,3 @@
-
 .container {
   padding: 2rem;
   max-width: 1200px;
@@ -8,197 +7,219 @@
 
 @keyframes fadeInBlur {
   0% {
-      filter: blur(10px);
-      opacity: 0;
+    filter: blur(10px);
+    opacity: 0;
   }
   100% {
-      filter: blur(0);
-      opacity: 1;
-  }
-}
-  
-  .projectsGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .spinnerContainer {
-    position: fixed;
-    top: 16px;
-    right: 16px;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    outline: none;
-  }
-
-  .arobase {
-    font-size: 3rem;
-    background-color: transparent;
-    color: #c5007a;
-  }
-
-  .arobase:hover {
-    cursor: pointer;
-  }
-
-
-    
-  .a {
-    color: #0038b1;
-    font-weight: 500;
-  }
-  .returnToInitial {
-    animation: return 15s ease-in-out;
-  }
-  .spin {
-    animation: spin 20s linear infinite;
-  }
-  
-  .title {
-    font-size: 24px;
-    font-weight: 500;
-    margin: 16px;
-    color: #c5007a;
-    
-  }
-  .block {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    padding: 2px 8px 24px 8px;
-    margin-bottom: 24px;;
-    border-radius: 8px;
-    background-color: rgba(42, 40, 51, 0.7);
-  }
-
-  .lastBlock{
-    border-radius: 8px 8px 16px 16px;
-
-}
-  .blockText {
-    padding: 0 16px;
-  }
-
-  .block p {
-    text-indent: 24px;
-    text-align: justify;
-    color: whitesmoke;
-  }
-
-  .stack {
-    text-align: center;
-    font-size: 12px;
-    color: whitesmoke;
-    
-    
-  }
-
-  .embla {
-    overflow: hidden;
-    width: 80%;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  
-  .emblaContainer {
-    display: flex;
-  }
-  
-  .emblaSlide {
-    flex: 0 0 100%;
-    min-width: 0;
-    position: relative;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-  }
-  
-  .emblaSlide.is-selected {
+    filter: blur(0);
     opacity: 1;
   }
-  
-  .emblaPrevButton,
-  .emblaNextButton {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.7);
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    z-index: 1;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.spinnerContainer {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: none;
+}
+
+.popContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 25vw;
+  min-width: 100px;
+}
+
+.socialLinks {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.arobase {
+  font-size: 3rem;
+  background-color: transparent;
+  color: #c5007a;
+}
+
+.arobase:hover {
+  cursor: pointer;
+}
+
+.linkedIn {
+  color: #0038b1;
+  font-weight: 500;
+}
+
+.gitHub {
+  color: black;
+  font-weight: 500;
+}
+
+.linkedIn:hover,
+.gitHub:hover {
+  color: #c5007a;
+}
+
+.returnToInitial {
+  animation: return 15s ease-in-out;
+}
+.spin {
+  animation: spin 20s linear infinite;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 16px;
+  color: #c5007a;
+}
+.block {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 2px 8px 24px 8px;
+  margin-bottom: 24px;
+  border-radius: 8px;
+  background-color: rgba(42, 40, 51, 0.7);
+}
+
+.lastBlock {
+  border-radius: 8px 8px 16px 16px;
+}
+.blockText {
+  padding: 0 16px;
+}
+
+.block p {
+  text-indent: 24px;
+  text-align: justify;
+  color: whitesmoke;
+}
+
+.stack {
+  text-align: center;
+  font-size: 12px;
+  color: whitesmoke;
+}
+
+.embla {
+  overflow: hidden;
+  width: 80%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.emblaContainer {
+  display: flex;
+}
+
+.emblaSlide {
+  flex: 0 0 100%;
+  min-width: 0;
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.emblaSlide.is-selected {
+  opacity: 1;
+}
+
+.emblaPrevButton,
+.emblaNextButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  z-index: 1;
+}
+
+.emblaPrevButton:hover,
+.emblaNextButton:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.emblaPrevButton {
+  left: 32px;
+}
+
+.emblaNextButton {
+  right: 32px;
+}
+
+.emblaPrevButton svg,
+.emblaNextButton svg {
+  width: 24px;
+  height: 24px;
+  fill: #333;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
   }
-  
-  .emblaPrevButton:hover,
-  .emblaNextButton:hover {
-    background: rgba(255, 255, 255, 0.9);
+  to {
+    transform: rotate(360deg);
   }
-  
+}
+
+@media (max-width: 768px) {
+  .spinnerContainer {
+    height: auto;
+    top: 10px;
+    right: 10px;
+  }
+  .arobase {
+    font-size: 2.5rem;
+  }
   .emblaPrevButton {
-    left: 32px;
+    left: 16px;
   }
-  
+
   .emblaNextButton {
-    right: 32px;
+    right: 16px;
   }
-  
-  .emblaPrevButton svg,
-  .emblaNextButton svg {
-    width: 24px;
-    height: 24px;
-    fill: #333;
+}
+
+@media (max-width: 450px) {
+  .container {
+    padding: 1rem;
+  }
+  .arobase {
+    font-size: 2.3rem;
+  }
+  .emblaPrevButton {
+    left: 8px;
   }
 
-  @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+  .emblaNextButton {
+    right: 8px;
   }
-
-  
-  @media (max-width: 768px) {
-    .spinnerContainer {
-      height: auto;
-      top: 10px;
-      right: 10px;
-    }
-    .arobase {
-      font-size: 2.5rem;
-    }
-    .emblaPrevButton {
-      left: 16px;
-    }
-    
-    .emblaNextButton {
-      right: 16px;
-    }
-  }
-
-  @media (max-width: 450px) {
-    .container {
-      padding: 1rem;
-    }
-    .arobase {
-      font-size: 2.3rem;
-    }
-    .emblaPrevButton {
-      left: 8px;
-    }
-    
-    .emblaNextButton {
-      right: 8px;
-    }
-  }
+}
